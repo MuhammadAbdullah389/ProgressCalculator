@@ -10,12 +10,11 @@
   <body>
     <header>
       <h1>Welcome to the COMSATS GPA Calculator</h1>
-      <p>Calculate your grades</p>
     </header>
     <main>
       <label for="asking"
         >What is the nature of your course? Theory only or Lab + Theory</label
-      ><br />
+      >
       <select name="courseNature" id="courseNature">
         <option value="" disabled selected>Choose course nature...</option>
         <option value="theory">Thoery Only</option>
@@ -23,51 +22,310 @@
       </select>
 
       <section id="theory">
-        <h1>
-          Now your course is based entirely on theory. So enter the assesments
-          what you hav done so far......
-        </h1>
-        <label for="quizes"
-          >Enter the number of quizes done so far...... (Max 4)</label
-        >
-        <input type="text" name="quiz" id="quiz" /><br />
-        <label for="assignments"
-          >Enter the number of assignments done so far...... (Max 4)</label
-        >
-        <input type="text" name="assignments" id="assignments" /><br />
-        <label for="mid">Is your mid term exam done?</label>
-        <input type="checkbox" name="mid" id="mid" /><br />
-        <label for="final">Is your terminal exam done?</label>
-        <input type="checkbox" name="terminal" id="terminal" /><br />
-        <button>Generate Form!</button>
+        <b
+          ><label for=""
+            >Now your course is based entirely on theory. So enter the
+            assesments what you have done so far......</label
+          ></b
+        ><br />
+        <label for="quiz1">Enter the marks of quiz 1</label>
+        <input
+          type="text"
+          id="quiz1"
+          class="quizObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="quiz1t"
+          class="quizTotal"
+          placeholder="Total"
+        /><br />
+        <label for="quiz2">Enter the marks of quiz 2</label>
+        <input
+          type="text"
+          id="quiz2"
+          class="quizObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="quiz2t"
+          class="quizTotal"
+          placeholder="Total"
+        /><br />
+        <label for="quiz3">Enter the marks of quiz 3</label>
+        <input
+          type="text"
+          id="quiz3"
+          class="quizObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="quiz3t"
+          class="quizTotal"
+          placeholder="Total"
+        /><br />
+        <label for="quiz4">Enter the marks of quiz 4</label>
+        <input
+          type="text"
+          id="quiz4"
+          class="quizObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="quiz4t"
+          class="quizTotal"
+          placeholder="Total"
+        /><br />
+
+        <label for="assignment1">Enter the marks of assignment 1</label>
+        <input
+          type="text"
+          id="assignment1"
+          class="assignmentObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="assignment1t"
+          class="assignmentTotal"
+          placeholder="Total"
+        /><br />
+        <label for="assignment2">Enter the marks of assignment 2</label>
+        <input
+          type="text"
+          id="assignment2"
+          class="assignmentObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="assignment2t"
+          class="assignmentTotal"
+          placeholder="Total"
+        /><br />
+        <label for="assignment3">Enter the marks of assignment 3</label>
+        <input
+          type="text"
+          id="assignment3"
+          class="assignmentObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="assignment3t"
+          class="assignmentTotal"
+          placeholder="Total"
+        /><br />
+        <label for="assignment4">Enter the marks of assignment 4</label>
+        <input
+          type="text"
+          id="assignment4"
+          class="assignmentObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="assignment4t"
+          class="assignmentTotal"
+          placeholder="Total"
+        /><br />
+
+        <label for="mid">Enter the marks of Mid Term</label>
+        <input type="text" id="mid" placeholder="Obtained" />
+        <input type="text" id="midt" placeholder="Total" /><br />
+
+        <label for="final">Enter the marks of Final</label>
+        <input type="text" id="final" placeholder="Obtained" />
+        <input type="text" id="finalt" placeholder="Total" /><br />
+        <button id="theoryProgress">Get Progress!</button>
       </section>
       <section id="theoryAndLab">
-        <h1>
-          Now your course is based on theory as well as Lab. So enter the
-          assesments what you hav done so far......
-        </h1>
-        <label for="quizes"
-          >Enter the number of theory quizes done so far...... (Max 4)</label
-        >
-        <input type="text" name="quiz" id="theoryQuiz" /><br />
-        <label for="assignments"
-          >Enter the number of Theory assignments done so far...... (Max
-          4)</label
-        >
-        <input type="text" name="assignments" id="theoryAssignments" /><br />
-        <label for="mid">Is your theory mid term exam done?</label>
-        <input type="checkbox" name="mid" id="theoryMid" /><br />
-        <label for="final">Is your Theory terminal exam done?</label>
-        <input type="checkbox" name="terminal" id="theoryTerminal" /><br />
-        <label for="assignments"
-          >Enter the number of Lab assignments done so far...... (Max 4)</label
-        >
-        <input type="text" name="assignments" id="LabAssignments" /><br />
-        <label for="mid">Is your Lab mid term exam done?</label>
-        <input type="checkbox" name="mid" id="labMid" /><br />
-        <label for="final">Is your Lab terminal exam done?</label>
-        <input type="checkbox" name="terminal" id="theoryTerminal" /><br />
-        <button>Generate Form!</button>
+        <h1></h1>
+        <b
+          ><label for="">
+            Now your course is based on theory as well as Lab. So enter the
+            assesments what you have done so far......</label
+          ></b
+        ><br />
+        <label for="tquiz1">Enter the marks of theory quiz 1</label>
+        <input
+          type="text"
+          id="tquiz1"
+          class="theoryQuizObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="tquiz1t"
+          class="theoryQuizTotal"
+          placeholder="Total"
+        /><br />
+        <label for="tquiz2">Enter the marks of theory quiz 2</label>
+        <input
+          type="text"
+          id="tquiz2"
+          class="theoryQuizObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="tquiz2t"
+          class="theoryQuizTotal"
+          placeholder="Total"
+        /><br />
+        <label for="tquiz3">Enter the marks of theory quiz 3</label>
+        <input
+          type="text"
+          id="tquiz3"
+          class="theoryQuizObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="tquiz3t"
+          class="theoryQuizTotal"
+          placeholder="Total"
+        /><br />
+        <label for="tquiz4">Enter the marks of theory quiz 4</label>
+        <input
+          type="text"
+          id="tquiz4"
+          class="theoryQuizObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="tquiz4t"
+          class="theoryQuizTotal"
+          placeholder="Total"
+        /><br />
+
+        <label for="tassignment1">Enter the marks of theory assignment 1</label>
+        <input
+          type="text"
+          id="tassignment1"
+          class="theoryAssignmentObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="tassignment1t"
+          class="theoryAssignmentTotal"
+          placeholder="Total"
+        /><br />
+        <label for="tassignment2">Enter the marks of theory assignment 2</label>
+        <input
+          type="text"
+          id="tassignment2"
+          class="theoryAssignmentObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="tassignment2t"
+          class="theoryAssignmentTotal"
+          placeholder="Total"
+        /><br />
+        <label for="tassignment3">Enter the marks of theory assignment 3</label>
+        <input
+          type="text"
+          id="tassignment3"
+          class="theoryAssignmentObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="tassignment3t"
+          class="theoryAssignmentTotal"
+          placeholder="Total"
+        /><br />
+        <label for="tassignment4">Enter the marks of theory assignment 4</label>
+        <input
+          type="text"
+          id="tassignment4"
+          class="theoryAssignmentObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="tassignment4t"
+          class="theoryAssignmentTotal"
+          placeholder="Total"
+        /><br />
+
+        <label for="tmid">Enter the marks of theory Mid Term</label>
+        <input type="text" id="tmid" placeholder="Obtained" />
+        <input type="text" id="tmidt" placeholder="Total" /><br />
+
+        <label for="tfinal">Enter the marks of theory Final</label>
+        <input type="text" id="tfinal" placeholder="Obtained" />
+        <input type="text" id="tfinalt" placeholder="Total" /><br />
+
+        <label for="lassignment1">Enter the marks of lab assignment 1</label>
+        <input
+          type="text"
+          id="lassignment1"
+          class="labAssignmentObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="lassignment1t"
+          class="labAssignmentTotal"
+          placeholder="Total"
+        /><br />
+        <label for="lassignment2">Enter the marks of lab assignment 2</label>
+        <input
+          type="text"
+          id="lassignment2"
+          class="labAssignmentObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="lassignment2t"
+          class="labAssignmentTotal"
+          placeholder="Total"
+        /><br />
+        <label for="lassignment3">Enter the marks of lab assignment 3</label>
+        <input
+          type="text"
+          id="lassignment3"
+          class="labAssignmentObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="lassignment3t"
+          class="labAssignmentTotal"
+          placeholder="Total"
+        /><br />
+        <label for="lassignment4">Enter the marks of lab assignment 4</label>
+        <input
+          type="text"
+          id="lassignment4"
+          class="labAssignmentObtained"
+          placeholder="Obtained"
+        />
+        <input
+          type="text"
+          id="lassignment4t"
+          class="labAssignmentTotal"
+          placeholder="Total"
+        /><br />
+
+        <label for="lmid">Enter the marks of lab Mid Term</label>
+        <input type="text" id="lmid" placeholder="Obtained" />
+        <input type="text" id="lmidt" placeholder="Total" /><br />
+
+        <label for="lfinal">Enter the marks of lab Final</label>
+        <input type="text" id="lfinal" placeholder="Obtained" />
+        <input type="text" id="lfinalt" placeholder="Total" /><br />
+        <button id="theoryLabProgress">Get Progress!</button>
       </section>
     </main>
     <script src="script.js"></script>
