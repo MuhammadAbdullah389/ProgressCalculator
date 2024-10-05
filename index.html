@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPA Calculator</title>
+    <link rel="shortcut icon" href="download.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to the COMSATS GPA Calculator</h1>
+      <p>Calculate your grades</p>
+    </header>
+    <main>
+      <label for="asking"
+        >What is the nature of your course? Theory only or Lab + Theory</label
+      ><br />
+      <select name="courseNature" id="courseNature">
+        <option value="" disabled selected>Choose course nature...</option>
+        <option value="theory">Thoery Only</option>
+        <option value="theoryAndLab">Theory and Lab</option>
+      </select>
+
+      <section id="theory">
+        <h1>
+          Now your course is based entirely on theory. So enter the assesments
+          what you hav done so far......
+        </h1>
+        <label for="quizes"
+          >Enter the number of quizes done so far...... (Max 4)</label
+        >
+        <input type="text" name="quiz" id="quiz" /><br />
+        <label for="assignments"
+          >Enter the number of assignments done so far...... (Max 4)</label
+        >
+        <input type="text" name="assignments" id="assignments" /><br />
+        <label for="mid">Is your mid term exam done?</label>
+        <input type="checkbox" name="mid" id="mid" /><br />
+        <label for="final">Is your terminal exam done?</label>
+        <input type="checkbox" name="terminal" id="terminal" /><br />
+        <button>Generate Form!</button>
+      </section>
+      <section id="theoryAndLab">
+        <h1>
+          Now your course is based on theory as well as Lab. So enter the
+          assesments what you hav done so far......
+        </h1>
+        <label for="quizes"
+          >Enter the number of theory quizes done so far...... (Max 4)</label
+        >
+        <input type="text" name="quiz" id="theoryQuiz" /><br />
+        <label for="assignments"
+          >Enter the number of Theory assignments done so far...... (Max
+          4)</label
+        >
+        <input type="text" name="assignments" id="theoryAssignments" /><br />
+        <label for="mid">Is your theory mid term exam done?</label>
+        <input type="checkbox" name="mid" id="theoryMid" /><br />
+        <label for="final">Is your Theory terminal exam done?</label>
+        <input type="checkbox" name="terminal" id="theoryTerminal" /><br />
+        <label for="assignments"
+          >Enter the number of Lab assignments done so far...... (Max 4)</label
+        >
+        <input type="text" name="assignments" id="LabAssignments" /><br />
+        <label for="mid">Is your Lab mid term exam done?</label>
+        <input type="checkbox" name="mid" id="labMid" /><br />
+        <label for="final">Is your Lab terminal exam done?</label>
+        <input type="checkbox" name="terminal" id="theoryTerminal" /><br />
+        <button>Generate Form!</button>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
