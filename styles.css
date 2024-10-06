@@ -61,15 +61,15 @@ section input[type="text"] {
     color: #5624d3;
     font-weight: 600;
 }
-#x {
-    margin: 0 20vw 0 20vw;
+#x , #x1{
+    margin: 0 20vw 20px 20vw;
 }
 button {
     margin: 10px;
     padding: 10px;
     border-radius: 15px;
 }
-#msg {
+#msg , #msg2 {
     color: #3B0D11;
     display: flex;
     justify-content: center;

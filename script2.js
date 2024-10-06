@@ -7,6 +7,9 @@ let dis = document.querySelector("#x1");
 let msg2 = document.querySelector("#msg2");
 let to = 0, tt = 0; lo = 0 ; lt = 0;
 const btn = document.querySelector("#theoryLabProgress");
+let totalResult = 0;
+let obtainedResult = 0;
+let Result = 0;
 let Credits = 0;
 let tCredits = 0;
 let lCredits = 0;
@@ -64,21 +67,6 @@ let Calculate = () => {
     labFinalObtainedMarks = accumulator(labFinalObtained, labFinalObtainedMarks);
     labFinalTotalMarks = daccumulator(labFinalTotal , labFinalTotalMarks );
     console.log("Theory Mid Obtained Marks:", theoryMidObtainedMarks);
-console.log("Theory Quiz Total:", theoryQuizTotal);
-console.log("Theory Quiz Obtained:", theoryQuizObtained);
-console.log("Theory Final Total Marks:", theoryFinalTotalMarks);
-console.log("Theory Assignment Obtained:", theoryAssignmentObtained);
-console.log("Theory Assignment Total:", theoryAssignmentTotal);
-console.log("Theory Mid Total Marks:", theoryMidTotalMarks);
-console.log("Theory Final Obtained Marks:", theoryFinalObtainedMarks);
-
-// Logging for Lab Variables
-console.log("Lab Assignment Obtained:", labAssignmentObtained);
-console.log("Lab Assignment Total:", labAssignmentTotal);
-console.log("Lab Mid Obtained Marks:", labMidObtainedMarks);
-console.log("Lab Mid Total Marks:", labMidTotalMarks);
-console.log("Lab Final Obtained Marks:", labFinalObtainedMarks);
-console.log("Lab Final Total Marks:", labFinalTotalMarks);
   };
 
   let status2 = () => {
@@ -146,7 +134,11 @@ console.log("Lab Final Total Marks:", labFinalTotalMarks);
     lo = (labAssignmentObtained / labAssignmentTotal * (lassignments * (25/4))) + (labMidObtainedMarks / labMidTotalMarks * (lmid * 25)) + (labFinalObtainedMarks / labFinalTotalMarks * (lfinal * 50));
 
     lt = (lassignments * (25/4)) + (lmid * 25) + (lfinal * 50);
-    console.log(to , tt, lo , lt)
+    obtainedResult = (to * (tCredits / Credits)) + (lo * (lCredits / Credits));
+    totalResult = (tt * (tCredits / Credits)) + (lt * (lCredits / Credits));
+    msg2.innerText = `Your Theory Progress is ${to} / ${tt}
+                      Your Lab Progress is ${lo} / ${lt}
+                      Your overall Progress is ${obtainedResult} / ${totalResult}`;
 
   };
 
@@ -155,6 +147,7 @@ console.log("Lab Final Total Marks:", labFinalTotalMarks);
     tCredits = accumulator(tcredits,tCredits);
     lCredits = accumulator(lcredits,lCredits);
   };
+
   generator.addEventListener("click", () => {
     initializer();
     if (Credits !== tCredits  + lCredits || Credits == 0){
