@@ -75,3 +75,6 @@ button {
     justify-content: center;
     font-size: x-large;
 }
+#marking {
+    display: none;
+}

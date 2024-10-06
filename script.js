@@ -11,8 +11,6 @@ let obtained = 0;
 let total = 0;
 //Buttons accessed for event listening be triggered
 const onlybtn = document.querySelector("#theoryProgress");
-const btn = document.querySelector("#theoryLabProgress");
-
 //Toggle between course types
 courseNatureSelect.addEventListener("change", () => {
   if (courseNatureSelect.value == "theory") {
@@ -49,33 +47,7 @@ let onlyTheoryMidObtained = document.querySelector("#mid");
 
 let onlyTheoryFinalTotal = document.querySelector("#finalt");
 let onlyTheoryFinalObtained = document.querySelector("#final");
-//Lab + Theory score variables
-let theoryQuizTotalList = document.querySelectorAll(".theoryQuizTotal");
-let theoryQuizObtainedList = document.querySelectorAll(".theoryQuizObtained");
 
-let theoryAssignmentTotalList = document.querySelectorAll(
-  ".theoryAssignmentTotal"
-);
-let theoryAssignmentObtainedList = document.querySelectorAll(
-  ".theoryAssignmentObtained"
-);
-
-let theoryMidTotal = document.querySelector("#tmidt");
-let theoryMidObtained = document.querySelector("#tmid");
-
-let theoryFinalTotal = document.querySelector("#tfinalt");
-let theoryFinalObtained = document.querySelector("tfinal");
-
-let labAssignmentTotalList = document.querySelectorAll(".labAssignmentTotal");
-let labAssignmentObtainedList = document.querySelectorAll(
-  ".labAssignmentObtained"
-);
-
-let labMidTotal = document.querySelector("#lmidt");
-let labMidObtained = document.querySelector("#lmid");
-
-let labFinalTotal = document.querySelector("lfinalt");
-let labFinalObtained = document.querySelector("lfinal");
 
 let accumulator = (list, value) => {
   value = 0;
@@ -87,7 +59,8 @@ let accumulator = (list, value) => {
 
 let listAccumulator = (list, value) => {
   value = 0;
-  list.forEach((mark) => {
+  const items = Array.from(list);
+  items.forEach((mark) => {
     if (mark.value !== "" && !isNaN(mark.value)) {
       value += parseFloat(mark.value); // Add only valid numbers
     }
@@ -107,7 +80,8 @@ let daccumulator = (list, value) => {
 
 let dlistAccumulator = (list, value) => {
   value = 0;
-  list.forEach((mark) => {
+  const item = Array.from(list);
+  item.forEach((mark) => {
     if (mark.value !== "" && !isNaN(mark.value)) {
       value += parseFloat(mark.value); // Add only valid numbers
     }
@@ -134,7 +108,7 @@ let Calc = () => {
 };
 
 //Checking entered fields
-let status = () => {
+let status1 = () => {
   tquizes = 0;
   tassignments = 0;
   tfinal = 0;
@@ -181,7 +155,9 @@ let finalizer = () => {
   total = (tquizes * (15/4)) + (tassignments * (10/4)) + (tmid * 25) + (tfinal * 50);
 };
 onlybtn.addEventListener("click", () => {
-  status();
+  status1();
   finalizer();
   msg.innerText = `Your Ongoing progress is ${obtained} / ${total}`;
 });
+
+
