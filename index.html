@@ -9,21 +9,23 @@
   </head>
   <body>
     <header>
-      <h1>Welcome to the COMSATS GPA Calculator</h1>
+      <h1>Welcome to the COMSATS progress Calculator</h1>
     </header>
     <main>
-      <label for="asking"
+      <div id="select">
+        <label id="asking"
         >What is the nature of your course? Theory only or Lab + Theory</label
       >
       <select name="courseNature" id="courseNature">
         <option value="" disabled selected>Choose course nature...</option>
         <option value="theory">Thoery Only</option>
-        <option value="theoryAndLab">Theory and Lab</option>
+        <option value="theoryAndLab" disabled>Theory and Lab</option>
       </select>
+      </div>
 
       <section id="theory">
         <b
-          ><label for=""
+          ><label id="x"
             >Now your course is based entirely on theory. So enter the
             assesments what you have done so far......</label
           ></b
@@ -147,9 +149,8 @@
       <section id="theoryAndLab">
         <h1></h1>
         <b
-          ><label for="">
-            Now your course is based on theory as well as Lab. So enter the
-            assesments what you have done so far......</label
+          ><label id="x">
+            Enter the assesments what you have done so far</label
           ></b
         ><br />
         <label for="tquiz1">Enter the marks of theory quiz 1</label>

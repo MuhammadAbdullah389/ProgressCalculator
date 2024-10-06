@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+#theory , #theoryAndLab {
+    display: none;
+}
+body {
+    background-color: #9DC7C8;
+}
+header {
+    background-color: #9DC7C8;
+    color: #6A3937;
+    min-height: 15vh;
+    height: auto;
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+}
+#select {
+    border-top: 2px solid #3B0D11;
+    display: flex;
+    flex-flow: column wrap;
+    min-height: 15vh;
+    color: #6A3937;
+    background-color: #9DC7C8;
+    justify-content: space-evenly;
+}
+#asking {
+    font-size: large;
+    margin: 10px;
+    font-weight: 800;
+}
+#select select {
+    border: none;
+    outline: none;
+    margin: 1em 1.5em 1em 1.5em;
+    min-height: 5vh;
+    height: auto;
+    border-radius: 10px;
+    color: #5624d3;
+    font-weight: 600;
+    padding: 10px;
+}
+section {
+    margin: 10px;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 10px;
+}
+section input[type="text"] {
+    min-width: 100%;
+    border: none;
+    outline: none;
+    margin: 10px 0 10px 0;
+    padding: 10px;
+    height: 5vh;
+    border-radius: 10px;
+    color: #5624d3;
+    font-weight: 600;
+}
+#x {
+    margin: 0 20vw 0 20vw;
+}
+button {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+}
+#msg {
+    color: #3B0D11;
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+}
