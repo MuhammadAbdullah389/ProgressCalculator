@@ -2,7 +2,13 @@
 const courseNatureSelect = document.querySelector("#courseNature");
 const theoryOnly = document.querySelector("#theory");
 const theoryAndLab = document.querySelector("#theoryAndLab");
-
+let msg = document.querySelector("#msg");
+let tquizes = 0;
+let tassignments = 0;
+let tmid = 0;
+let tfinal = 0;
+let obtained = 0;
+let total = 0;
 //Buttons accessed for event listening be triggered
 const onlybtn = document.querySelector("#theoryProgress");
 const btn = document.querySelector("#theoryLabProgress");
@@ -19,7 +25,6 @@ courseNatureSelect.addEventListener("change", () => {
 });
 
 // Only Theory access variables
-let trimmedValue;
 let onlyTheoryQuizTotal = 0;
 let onlyTheoryQuizObtained = 0;
 let onlyTheoryAssignmentTotal = 0;
@@ -77,7 +82,7 @@ let accumulator = (list, value) => {
   if (list.value !== "" && !isNaN(list.value)) {
     value += parseFloat(list.value);
   }
-  console.log(value);
+  return value;
 };
 
 let listAccumulator = (list, value) => {
@@ -87,40 +92,75 @@ let listAccumulator = (list, value) => {
       value += parseFloat(mark.value); // Add only valid numbers
     }
   });
-  console.log(value);
+  return value;
+};
+let daccumulator = (list, value) => {
+  value = 0;
+  if (list.value !== "" && !isNaN(list.value)) {
+    value += parseFloat(list.value);
+  }
+  if (value == 0){
+    value = 1;
+  }
+  return value;
+};
+
+let dlistAccumulator = (list, value) => {
+  value = 0;
+  list.forEach((mark) => {
+    if (mark.value !== "" && !isNaN(mark.value)) {
+      value += parseFloat(mark.value); // Add only valid numbers
+    }
+  });
+  if (value == 0){
+    value = 1;
+  }
+  return value;
 };
 
 //Only theory functions
-let onlyTheoryQuizTotalMarksCalc = () => {
-  listAccumulator(onlyTheoryQuizTotalList, onlyTheoryQuizTotal);
-};
-
-let onlyTheoryQuizObtainedMarksCalc = () => {
-  listAccumulator(onlyTheoryQuizObtainedList, onlyTheoryQuizObtained);
-};
-
-let onlyTheoryAssignmentObtainedMarksCalc = () => {
-  listAccumulator(
+let Calc = () => {
+  onlyTheoryMidObtainedMarks = accumulator(onlyTheoryMidObtained, onlyTheoryMidObtainedMarks);
+  onlyTheoryQuizTotal = dlistAccumulator(onlyTheoryQuizTotalList, onlyTheoryQuizTotal);
+  onlyTheoryQuizObtained = listAccumulator(onlyTheoryQuizObtainedList, onlyTheoryQuizObtained);
+  onlyTheoryFinalTotalMarks = daccumulator(onlyTheoryFinalTotal, onlyTheoryFinalTotalMarks);
+  onlyTheoryAssignmentObtained = listAccumulator(
     onlyTheoryAssignmentObtainedList,
     onlyTheoryAssignmentObtained
   );
+  onlyTheoryAssignmentTotal = dlistAccumulator(onlyTheoryAssignmentTotalList, onlyTheoryAssignmentTotal);
+  onlyTheoryMidTotalMarks = daccumulator(onlyTheoryMidTotal, onlyTheoryMidTotalMarks);
+  onlyTheoryFinalObtainedMarks = accumulator(onlyTheoryFinalObtained, onlyTheoryFinalObtainedMarks);
 };
 
-let onlyTheoryAssignmentTotalMarksCalc = () => {
-  listAccumulator(onlyTheoryAssignmentTotalList, onlyTheoryAssignmentTotal);
-};
-let onlyTheoryMidTotalCalc = () => {
-  accumulator(onlyTheoryMidTotal, onlyTheoryMidTotalMarks);
-};
-let onlyTheoryMidObtainedCalc = () => {
-  accumulator(onlyTheoryMidObtained, onlyTheoryMidObtainedMarks);
-};
-let onlyTheoryFinalTotalCalc = () => {
-  accumulator(onlyTheoryFinalTotal, onlyTheoryFinalTotalMarks);
-};
-
-let onlyTheoryFinalObtainedCalc = () => {
-  accumulator(onlyTheoryFinalObtained, onlyTheoryFinalObtainedMarks);
+//Checking entered fields
+let status = () => {
+  tquizes = 0;
+  tassignments = 0;
+  tfinal = 0;
+  tmid = 0;
+  onlyTheoryQuizTotalList.forEach((input) => {
+    if (input.value.trim() !== "" && !isNaN(input.value.trim())) {
+      tquizes++;
+    }
+  });
+  onlyTheoryAssignmentTotalList.forEach((input) => {
+    if (input.value.trim() !== "" && !isNaN(input.value.trim())) {
+      tassignments++;
+    }
+  });
+  if (
+    onlyTheoryFinalTotal.value.trim() !== "" &&
+    !isNaN(onlyTheoryFinalTotal.value.trim())
+  ) {
+    tfinal++;
+  }
+  if (
+    onlyTheoryMidTotal.value.trim() !== "" &&
+    !isNaN(onlyTheoryMidTotal.value.trim())
+  ) {
+    tmid++;
+  }
 };
 
 //Lab + Thepory functions
@@ -128,12 +168,20 @@ let theoryQuizTotalMarksCalc = () => {};
 let theoryQuizObtainedMarksCalc = () => {};
 let theoryAssignmentObtainedMarksCalc = () => {};
 let theoryAssignmentTotalMarksCalc = () => {};
-
 let quizTotalMarksCalc = () => {};
 let quizObtainedMarksCalc = () => {};
 let assignmentObtainedMarksCalc = () => {};
 let assignmentTotalMarksCalc = () => {};
 
+
+let finalizer = () => {
+  Calc();
+  obtained = (onlyTheoryQuizObtained / onlyTheoryQuizTotal * (tquizes * (15/4))) + (onlyTheoryAssignmentObtained / onlyTheoryAssignmentTotal * (tassignments * (10/4))) + (onlyTheoryMidObtainedMarks / onlyTheoryMidTotalMarks * (tmid * 25)) + (onlyTheoryFinalObtainedMarks / onlyTheoryFinalTotalMarks * (tfinal * 50));
+
+  total = (tquizes * (15/4)) + (tassignments * (10/4)) + (tmid * 25) + (tfinal * 50);
+};
 onlybtn.addEventListener("click", () => {
-  onlyTheoryQuizTotalMarksCalc();
+  status();
+  finalizer();
+  msg.innerText = `Your Ongoing progress is ${obtained} / ${total}`;
 });
