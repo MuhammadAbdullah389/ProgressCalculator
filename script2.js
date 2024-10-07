@@ -66,7 +66,6 @@ let Calculate = () => {
     labMidTotalMarks = daccumulator(labMidTotal, labMidTotalMarks);
     labFinalObtainedMarks = accumulator(labFinalObtained, labFinalObtainedMarks);
     labFinalTotalMarks = daccumulator(labFinalTotal , labFinalTotalMarks );
-    console.log("Theory Mid Obtained Marks:", theoryMidObtainedMarks);
   };
 
   let status2 = () => {
@@ -127,7 +126,7 @@ let Calculate = () => {
 
   let terminator = () => {
     Calculate();
-    to = (theoryQuizObtained / theoryQuizTotal * (quizes * (15/4))) + (theoryAssignmentObtained / theoryAssignmentTotal * (tassignments * (10/4))) + (theoryMidObtainedMarks / theoryMidTotalMarks * (mid * 25)) + (theoryFinalObtainedMarks / theoryFinalTotalMarks * (final * 50));
+    to = (theoryQuizObtained / theoryQuizTotal * (quizes * (15/4))) + (theoryAssignmentObtained / theoryAssignmentTotal * (assignments * (10/4))) + (theoryMidObtainedMarks / theoryMidTotalMarks * (mid * 25)) + (theoryFinalObtainedMarks / theoryFinalTotalMarks * (final * 50));
 
     tt = (quizes * (15/4)) + (assignments * (10/4)) + (mid * 25) + (final * 50);
 
