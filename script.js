@@ -137,17 +137,6 @@ let status1 = () => {
   }
 };
 
-//Lab + Thepory functions
-let theoryQuizTotalMarksCalc = () => {};
-let theoryQuizObtainedMarksCalc = () => {};
-let theoryAssignmentObtainedMarksCalc = () => {};
-let theoryAssignmentTotalMarksCalc = () => {};
-let quizTotalMarksCalc = () => {};
-let quizObtainedMarksCalc = () => {};
-let assignmentObtainedMarksCalc = () => {};
-let assignmentTotalMarksCalc = () => {};
-
-
 let finalizer = () => {
   Calc();
   obtained = (onlyTheoryQuizObtained / onlyTheoryQuizTotal * (tquizes * (15/4))) + (onlyTheoryAssignmentObtained / onlyTheoryAssignmentTotal * (tassignments * (10/4))) + (onlyTheoryMidObtainedMarks / onlyTheoryMidTotalMarks * (tmid * 25)) + (onlyTheoryFinalObtainedMarks / onlyTheoryFinalTotalMarks * (tfinal * 50));
