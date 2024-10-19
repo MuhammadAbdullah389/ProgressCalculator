@@ -2,6 +2,8 @@
 const courseNatureSelect = document.querySelector("#courseNature");
 const theoryOnly = document.querySelector("#theory");
 const theoryAndLab = document.querySelector("#theoryAndLab");
+const close = document.querySelector(".end");
+const popup = document.querySelector(".pop");
 let msg = document.querySelector("#msg");
 let tquizes = 0;
 let tassignments = 0;
@@ -150,3 +152,22 @@ onlybtn.addEventListener("click", () => {
 });
 
 
+function openPopup() {
+  popup.style.display = 'block';
+}
+
+close.onclick = function() {
+  popup.style.display = 'none';
+}
+
+  // window.onclick = function(event) {
+  //   if (event.target !== popup) {
+  //       popup.style.display = 'none';
+  //   }
+  // }
+
+
+// Open the popup when the page loads
+window.onload = function() {
+  openPopup();
+};

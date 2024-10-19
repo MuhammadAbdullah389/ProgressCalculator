@@ -11,7 +11,6 @@ body {
     background-color: #9DC7C8;
 }
 header {
-    background-color: #9DC7C8;
     color: #6A3937;
     min-height: 15vh;
     height: auto;
@@ -25,7 +24,6 @@ header {
     flex-flow: column wrap;
     min-height: 15vh;
     color: #6A3937;
-    background-color: #9DC7C8;
     justify-content: space-evenly;
 }
 #asking {
@@ -78,4 +76,36 @@ button {
 }
 #marking {
     display: none;
+}
+.pop {
+    background-color: orange;
+    height: 50%;
+    height: min-content;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #9DC7C8;
+    border: 5px double rgb(11, 114, 205);
+    display: none;
+}
+.pop h1 , h3{
+    color: black;
+    margin: 0 0 0 1%;
+}
+.pop .end {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.pop p {
+    line-height: 2.5em;
+    margin:  0 1%;
+}
+@media only screen and (max-width : 481px) , only screen and (max-width: 768px) {
+    .pop {
+        width: 80%;
+    }
 }
