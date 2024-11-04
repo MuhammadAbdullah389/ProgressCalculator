@@ -66,6 +66,12 @@ let Calculate = () => {
     labMidTotalMarks = daccumulator(labMidTotal, labMidTotalMarks);
     labFinalObtainedMarks = accumulator(labFinalObtained, labFinalObtainedMarks);
     labFinalTotalMarks = daccumulator(labFinalTotal , labFinalTotalMarks );
+
+    if (theoryMidObtainedMarks > theoryMidTotalMarks || theoryFinalObtainedMarks > theoryFinalTotalMarks || theoryAssignmentObtained > theoryAssignmentTotal || theoryQuizObtained > theoryQuizTotal || labAssignmentObtained > labAssignmentTotal || labMidObtainedMarks > labMidTotalMarks || labFinalObtainedMarks > labFinalTotalMarks){
+      return false;
+    }else{
+      return true;
+    }
   };
 
   let status2 = () => {
@@ -125,8 +131,8 @@ let Calculate = () => {
   };
 
   let terminator = () => {
-    Calculate();
-    to = (theoryQuizObtained / theoryQuizTotal * (quizes * (15/4))) + (theoryAssignmentObtained / theoryAssignmentTotal * (assignments * (10/4))) + (theoryMidObtainedMarks / theoryMidTotalMarks * (mid * 25)) + (theoryFinalObtainedMarks / theoryFinalTotalMarks * (final * 50));
+    if (Calculate()){
+      to = (theoryQuizObtained / theoryQuizTotal * (quizes * (15/4))) + (theoryAssignmentObtained / theoryAssignmentTotal * (assignments * (10/4))) + (theoryMidObtainedMarks / theoryMidTotalMarks * (mid * 25)) + (theoryFinalObtainedMarks / theoryFinalTotalMarks * (final * 50));
 
     tt = (quizes * (15/4)) + (assignments * (10/4)) + (mid * 25) + (final * 50);
 
@@ -138,7 +144,9 @@ let Calculate = () => {
     msg2.innerText = `Your Theory Progress is ${to} / ${tt}
                       Your Lab Progress is ${lo} / ${lt}
                       Your overall Progress is ${obtainedResult} / ${totalResult}`;
-
+    }else{
+      msg2.innerText = "OOPS! It seems that you are entering obtained marks more than total marks. Check again";
+    }
   };
 
   let initializer = () => {

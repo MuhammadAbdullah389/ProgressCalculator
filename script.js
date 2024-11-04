@@ -107,6 +107,13 @@ let Calc = () => {
   onlyTheoryAssignmentTotal = dlistAccumulator(onlyTheoryAssignmentTotalList, onlyTheoryAssignmentTotal);
   onlyTheoryMidTotalMarks = daccumulator(onlyTheoryMidTotal, onlyTheoryMidTotalMarks);
   onlyTheoryFinalObtainedMarks = accumulator(onlyTheoryFinalObtained, onlyTheoryFinalObtainedMarks);
+
+  if (onlyTheoryMidObtainedMarks > onlyTheoryMidTotalMarks || onlyTheoryFinalObtainedMarks > onlyTheoryFinalTotalMarks || onlyTheoryAssignmentObtained > onlyTheoryAssignmentTotal || onlyTheoryQuizObtained > onlyTheoryQuizTotal){
+    return false;
+  }else{
+    return true;
+  }
+
 };
 
 //Checking entered fields
@@ -140,15 +147,20 @@ let status1 = () => {
 };
 
 let finalizer = () => {
-  Calc();
-  obtained = (onlyTheoryQuizObtained / onlyTheoryQuizTotal * (tquizes * (15/4))) + (onlyTheoryAssignmentObtained / onlyTheoryAssignmentTotal * (tassignments * (10/4))) + (onlyTheoryMidObtainedMarks / onlyTheoryMidTotalMarks * (tmid * 25)) + (onlyTheoryFinalObtainedMarks / onlyTheoryFinalTotalMarks * (tfinal * 50));
+  if (Calc()){
+    obtained = (onlyTheoryQuizObtained / onlyTheoryQuizTotal * (tquizes * (15/4))) + (onlyTheoryAssignmentObtained / onlyTheoryAssignmentTotal * (tassignments * (10/4))) + (onlyTheoryMidObtainedMarks / onlyTheoryMidTotalMarks * (tmid * 25)) + (onlyTheoryFinalObtainedMarks / onlyTheoryFinalTotalMarks * (tfinal * 50));
 
-  total = (tquizes * (15/4)) + (tassignments * (10/4)) + (tmid * 25) + (tfinal * 50);
+    total = (tquizes * (15/4)) + (tassignments * (10/4)) + (tmid * 25) + (tfinal * 50);
+    msg.innerText = `Your Ongoing progress is ${obtained} / ${total}`;
+  }else{
+    msg.innerText = "OOPS! It seems that you are entering obtained marks more than total marks. Check again";
+  }
+
 };
 onlybtn.addEventListener("click", () => {
   status1();
   finalizer();
-  msg.innerText = `Your Ongoing progress is ${obtained} / ${total}`;
+  
 });
 
 
