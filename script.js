@@ -123,24 +123,24 @@ let status1 = () => {
   tfinal = 0;
   tmid = 0;
   onlyTheoryQuizTotalList.forEach((input) => {
-    if (input.value.trim() !== "" && !isNaN(input.value.trim())) {
+    if (input.value.trim() !== "" && !isNaN(input.value.trim()) && input.value != 0) {
       tquizes++;
     }
   });
   onlyTheoryAssignmentTotalList.forEach((input) => {
-    if (input.value.trim() !== "" && !isNaN(input.value.trim())) {
+    if (input.value.trim() !== "" && !isNaN(input.value.trim()) && input.value != 0) {
       tassignments++;
     }
   });
   if (
     onlyTheoryFinalTotal.value.trim() !== "" &&
-    !isNaN(onlyTheoryFinalTotal.value.trim())
+    !isNaN(onlyTheoryFinalTotal.value.trim()) && onlyTheoryFinalTotal.value != 0
   ) {
     tfinal++;
   }
   if (
     onlyTheoryMidTotal.value.trim() !== "" &&
-    !isNaN(onlyTheoryMidTotal.value.trim())
+    !isNaN(onlyTheoryMidTotal.value.trim()) && onlyTheoryMidTotal.value != 0
   ) {
     tmid++;
   }

@@ -84,46 +84,46 @@ let Calculate = () => {
     lmid = 0;
 
     theoryQuizTotalList.forEach((input) => {
-        if (input.value.trim() !== "" && !isNaN(input.value.trim())) {
+        if (input.value.trim() !== "" && !isNaN(input.value.trim()) && input.value != 0) {
           quizes++;
         }
       });
 
       theoryAssignmentTotalList.forEach((input) => {
-        if (input.value.trim() !== "" && !isNaN(input.value.trim())) {
+        if (input.value.trim() !== "" && !isNaN(input.value.trim()) && input.value != 0) {
           assignments++;
         }
       });
 
       if (
         theoryFinalTotal.value.trim() !== "" &&
-        !isNaN(theoryFinalTotal.value.trim())
+        !isNaN(theoryFinalTotal.value.trim()) && theoryFinalTotal.value != 0
       ) {
         final++;
       }
       if (
         theoryMidTotal.value.trim() !== "" &&
-        !isNaN(theoryMidTotal.value.trim())
+        !isNaN(theoryMidTotal.value.trim()) && theoryMidTotal.value != 0
       ) {
         mid++;
       }
 
        labAssignmentTotalList.forEach((input) => {
-        if (input.value.trim() !== "" && !isNaN(input.value.trim())) {
+        if (input.value.trim() !== "" && !isNaN(input.value.trim()) && input.value != 0) {
           lassignments++;
         }
       });
 
       if (
         labMidTotal.value.trim() !== "" &&
-        !isNaN(labMidTotal.value.trim())
+        !isNaN(labMidTotal.value.trim()) && labMidTotal.value != 0
       ) {
         lmid++;
       }
 
       if (
         labFinalTotal.value.trim() !== "" &&
-        !isNaN(labFinalTotal.value.trim())
+        !isNaN(labFinalTotal.value.trim() ) && labFinalTotal.value != 0
       ) {
         lfinal++;
       }
