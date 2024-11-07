@@ -24,6 +24,32 @@ courseNatureSelect.addEventListener("change", () => {
   }
 });
 
+let x = (calculated) => {
+  if (calculated <= 15){
+    return "4.0";
+  }
+  else if (calculated <= 20){
+    return "3.66";
+  }else if (calculated <= 25) {
+    return "3.00";
+  }else if (calculated <= 30) {
+    return "3.00";
+  }else if (calculated <= 35) {
+    return "2.66";
+  }else if (calculated <= 35) {
+    return "2.66";
+  }else if (calculated <= 39) {
+    return "2.33";
+  }else if (calculated <= 42) {
+    return "2.00";
+  }else if (calculated <= 45) {
+    return "1.66";
+  }else if (calculated <= 50) {
+    return "1.00";
+  }else {
+    return "F"
+  }
+}
 // Only Theory access variables
 let onlyTheoryQuizTotal = 0;
 let onlyTheoryQuizObtained = 0;
@@ -151,7 +177,9 @@ let finalizer = () => {
     obtained = (onlyTheoryQuizObtained / onlyTheoryQuizTotal * (tquizes * (15/4))) + (onlyTheoryAssignmentObtained / onlyTheoryAssignmentTotal * (tassignments * (10/4))) + (onlyTheoryMidObtainedMarks / onlyTheoryMidTotalMarks * (tmid * 25)) + (onlyTheoryFinalObtainedMarks / onlyTheoryFinalTotalMarks * (tfinal * 50));
 
     total = (tquizes * (15/4)) + (tassignments * (10/4)) + (tmid * 25) + (tfinal * 50);
-    msg.innerText = `Your Ongoing progress is ${obtained} / ${total}`;
+    let m = total - obtained;
+    let c = x(m);
+    msg.innerText = `Your Ongoing progress is ${obtained} / ${total} and you can get ${c}`;
   }else{
     msg.innerText = "OOPS! It seems that you are entering obtained marks more than total marks. Check again";
   }
