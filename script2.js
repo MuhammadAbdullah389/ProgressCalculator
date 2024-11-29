@@ -1,26 +1,23 @@
 let header = document.querySelector("header");
-let name = document.createElement("h3");
+let message = document.createElement("h3");
 
-// Check if the user's name is already stored in localStorage
+// Use of Local Storage
 const storedName = localStorage.getItem('username');
-
 if (!storedName) {
-    // If not found, ask for the user's name
     const userName = prompt("Welcome! What's your name?");
-    
     if (userName) {
-        // Save the name in localStorage and show the greeting
         localStorage.setItem('username', userName);
-        name.innerText = `Hello, ${userName}! Welcome to site.`;
+        message.innerText = `Hello, ${userName}! Welcome to site.`;
     } else {
-        name.innerText = "Hello! Welcome to site.";
+        message.innerText = "Hello! Welcome to site.";
     }
 } else {
-    // If name is found, display the greeting
-    name.innerText = `Welcome back, ${storedName}!`;
+    message.innerText = `Welcome back, ${storedName}!`;
 }
 header.appendChild(name);
 name.style.marginTop = "10px";
+
+
 const generator = document.querySelector("#generator");
 const content = document.querySelector("#marking");
 let credits = document.querySelector("#credits");
