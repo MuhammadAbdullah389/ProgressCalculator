@@ -1,6 +1,5 @@
 let header = document.querySelector("header");
 let message = document.createElement("h3");
-
 // Use of Local Storage
 const storedName = localStorage.getItem('username');
 if (!storedName) {
@@ -14,8 +13,8 @@ if (!storedName) {
 } else {
     message.innerText = `Welcome back, ${storedName}!`;
 }
-header.appendChild(name);
-name.style.marginTop = "10px";
+header.appendChild(message);
+message.style.marginTop = "10px";
 
 
 const generator = document.querySelector("#generator");
