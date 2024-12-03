@@ -102,8 +102,8 @@ button {
 }
 .pop h4 {
     position: absolute;
-    right: 05px;
-    bottom: 05px;
+    right: 0;
+    bottom: 0;
 }
 .pop p {
     line-height: 2.5em;
