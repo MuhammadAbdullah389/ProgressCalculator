@@ -31,11 +31,9 @@ let x = (calculated) => {
   else if (calculated <= 20){
     return "3.66";
   }else if (calculated <= 25) {
-    return "3.00";
+    return "3.33";
   }else if (calculated <= 30) {
     return "3.00";
-  }else if (calculated <= 35) {
-    return "2.66";
   }else if (calculated <= 35) {
     return "2.66";
   }else if (calculated <= 39) {
