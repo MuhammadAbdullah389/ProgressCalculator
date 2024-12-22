@@ -180,8 +180,7 @@ let Calculate = () => {
       alert("You are entering wrong credit distribution. The total credits must be the sum of thoery credits and the lab credits.")
     }else {
       marking.style.display = "block";
-      x1.innerText = `Now your course is Lab + Theory of credits ${Credits}(${tCredits},${lCredits}).So enter the
-              assesments what you have done so far......`;
+      x1.innerText = `Enter the assesments you have done so far in Course ${Credits}(${tCredits},${lCredits})...`;
     }
   })
 //Result Display event listener on the button

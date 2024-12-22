@@ -2,16 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Roboto', sans-serif;
 }
 #theory , #theoryAndLab {
     display: none;
 }
 body {
-    background-color: #12dcdf;
+    background-color: #E3FDFD;
 }
 header {
-    color: #6A3937;
+    color: #5E239D;
     min-height: 15vh;
     height: auto;
     overflow: hidden;
@@ -38,13 +38,14 @@ header {
     min-height: 5vh;
     height: auto;
     border-radius: 10px;
-    color: #5624d3;
+    color: #333333;
     font-weight: 600;
     padding: 10px;
+    border: 2px dotted #6A0572;
 }
 section {
     margin: 10px;
-    border: 2px solid white;
+    border: 2px solid #6A0572;
     padding: 10px;
     border-radius: 10px;
 }
@@ -56,20 +57,29 @@ section input[type="text"] {
     padding: 10px;
     height: 5vh;
     border-radius: 10px;
-    color: #5624d3;
+    color: #333333;
     font-weight: 600;
+    border: 2px dotted #6A0572;
+}
+section input[type="text"]:focus{
+    border-color: #FF6F61;
 }
 #x , #x1{
-    margin: 0 20vw 20px 20vw;
+    font-weight: bolder;
 }
 button {
     margin: 10px;
     padding: 10px;
     border-radius: 15px;
     cursor: pointer;
+    color: #FFFFFF;
+    background-color: #FF6F61;
+}
+button:hover{
+    background-color: #E95950;
 }
 #msg , #msg2 {
-    color: #3B0D11;
+    color: #6A1B9A;
     display: flex;
     justify-content: center;
     font-size: x-large;
@@ -78,7 +88,8 @@ button {
     display: none;
 }
 .pop {
-    background-color: orange;
+    background-color: #E3FDFD;
+    color: #333333;
     height: 50%;
     height: min-content;
     width: 50%;
@@ -86,12 +97,11 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-color: #12dcdf;
-    border: 5px double rgb(11, 114, 205);
+    border: 5px double #6A0572;
     display: none;
 }
 .pop h1 , h3{
-    color: black;
+    color: #3C1361;
     margin: 0 0 0 1%;
 }
 .pop .end {
@@ -100,6 +110,7 @@ button {
     right: 0;
     top: 0;
     font-weight: bold;
+    color: #3C1361;
 }
 .pop h4 {
     position: absolute;
@@ -110,6 +121,7 @@ button {
     line-height: 2.5em;
     margin:  0 1%;
 }
+
 @media only screen and (max-width : 481px) , only screen and (max-width: 768px) {
     .pop {
         width: 80%;
